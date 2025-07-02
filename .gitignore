@@ -1,2 +1,13 @@
-
 .vs/
+
+WebAPI/bin/
+WebAPI/obj/
+
+Application/bin/
+Application/obj/
+
+Domain/bin/
+Domain/obj/
+
+EfcDataAccess/bin/
+EfcDataAccess/obj/
