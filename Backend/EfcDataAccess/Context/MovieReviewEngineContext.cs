@@ -19,10 +19,10 @@ namespace EfcDataAccess.Context
 
         public DbSet<ContentCast> ContentCasts { get; set; }
 
+        // Configuring the location and what db are gonna be used
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source=..\EfcDataAccess\MovieReviewEngineDB.db");
-
         }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -62,7 +62,31 @@ namespace EfcDataAccess.Context
                 .HasOne(cc => cc.Cast)
                 .WithMany(c => c.ContentCasts)
                 .HasForeignKey(cc => cc.CastId);
+
+            modelBuilder.Entity<Content>().HasData(
+               new Content
+               {
+                   ContentId = Guid.NewGuid(), 
+                   Title = "Sample Movie",
+                   Description = "A great movie.",
+                   ReleaseDate = new DateTime(2023, 1, 1),
+                   Type = ContentType.Movie,
+                   ImageURL = "http://example.com/sample.jpg"
+               },
+               new Content
+               {
+                   ContentId = Guid.NewGuid(),
+                   Title = "Sample TV Show",
+                   Description = "A great TV Show.",
+                   ReleaseDate = new DateTime(2022, 5, 10),
+                   Type = ContentType.TVShow,
+                   ImageURL = "http://example.com/sample2.jpg"
+               }
+   );
+
         }
+
+       
 
     }
 }

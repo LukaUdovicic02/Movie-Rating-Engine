@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain.Models;
 
@@ -10,16 +12,30 @@ namespace Application.Logic
 {
     public class ContentLogic : IContentLogic
     {
-        public ContentLogic() {}
+        private readonly IContentDao contentDao; 
 
-        public Task<IEnumerable<Content>> GetAllContentAsync()
+        public ContentLogic(IContentDao dao)
         {
-            throw new NotImplementedException();
+            contentDao = dao;
         }
 
-        public Task<Content?> GetContentByIdAsync(int id)
+        public async Task<IEnumerable<Content>> GetAllContentAsync()
         {
-            throw new NotImplementedException();
+            return await contentDao.GetAllContentAsync();
+        }
+
+        public async Task<Content?> GetContentByIdAsync(Guid id)
+        {
+            
+            if(id == Guid.Empty)
+            {
+                throw new ValidationException("Content cannot be empty");
+            }
+
+            var content = await contentDao.GetContentByIdAsync(id);
+
+            return content;
+
         }
     }
 }

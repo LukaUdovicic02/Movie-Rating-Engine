@@ -1,3 +1,9 @@
+using Application.DaoInterfaces;
+using Application.Logic;
+using Application.LogicInterfaces;
+using EfcDataAccess.Context;
+using EfcDataAccess.DAOs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +13,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IContentLogic, ContentLogic>();
+
+builder.Services.AddScoped<IContentDao, ContentEfcDao>();
+
+builder.Services.AddDbContext<MovieReviewEngineContext>();
+
 var app = builder.Build();
+
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
