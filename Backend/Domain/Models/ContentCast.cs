@@ -14,5 +14,6 @@ namespace Domain.Models
         public Guid CastId { get; set; }
         public Cast Cast { get; set; }
 
+        public ContentCast() { }
     }
 }

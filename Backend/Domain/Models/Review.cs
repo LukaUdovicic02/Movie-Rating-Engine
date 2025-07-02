@@ -17,5 +17,7 @@ namespace Domain.Models
 
         // Navigation Property
         public Content Content { get; set; }
+
+        public Review() { }
     }
 }

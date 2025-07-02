@@ -13,11 +13,14 @@ namespace Domain.Models
         public Guid CastId { get; set; }
 
         [Required]
+        [MaxLength(50)]
         // Name of the Actor
         public string Name { get; set; }
 
         // Many to Many with Content
         public ICollection<ContentCast> ContentCasts {  get; set; }
+
+        public Cast() { }
 
 
     }
