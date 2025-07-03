@@ -1,4 +1,5 @@
 ﻿using Application.LogicInterfaces;
+using Domain.DTOs.ContentDtos;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +17,12 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Content>>> GetAllContent()
+        public async Task<ActionResult<IEnumerable<ContentDto>>> GetAllContent()
         {
             try
             {
                 var content = await contentLogic.GetAllContentAsync();
+
                 return Ok(content);
             }
             catch (Exception ex)
@@ -31,11 +33,18 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<Content>> GetContentById([FromRoute] Guid id)
+        public async Task<ActionResult<ContentDto>> GetContentById([FromRoute] Guid id)
         {
             try
             {
                 var content = await contentLogic.GetContentByIdAsync(id);
+
+
+                if (content == null)
+                {
+                    return NotFound($"Content with this ID: {id} not found");
+                }
+
                 return Ok(content);
             }
             catch (Exception ex)
@@ -45,6 +54,49 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet("title")]
+        public async Task<ActionResult<ContentDto>> GetContentByTitle([FromQuery] string title)
+        {
+            try
+            {
+                var content = await contentLogic.GetContentByTitleAsync(title);
 
+                if (content == null)
+                {
+                    return NotFound($"Content with this title: {title} does not exist");
+                }
+
+                return Ok(content);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpGet("type")]
+        public async Task<ActionResult<ContentDto>> GetContentByType([FromQuery] ContentType type)
+        {
+            try
+            {
+                Console.WriteLine($"type {type}");
+                var content = await contentLogic.GetContentByTypeAsync(type);          
+
+                if (content == null)
+                {
+                    return NotFound("Content does not match 'Movie' or 'TV Show'");
+                }
+
+                return Ok(content);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500);
+            }
+
+        }
     }
 }

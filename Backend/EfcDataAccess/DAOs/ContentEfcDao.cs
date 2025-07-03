@@ -29,5 +29,23 @@ namespace EfcDataAccess.DAOs
             var content = await context.Contents.FirstOrDefaultAsync(c => c.ContentId == id);
             return content;
         }
+
+        public async Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased)
+        {
+            var content = await context.Contents.FirstOrDefaultAsync(c => c.ReleaseDate == dateRelased);
+            return content;
+        }
+
+        public async Task<Content?> GetContentByTitleAsync(string title)
+        {
+            var content = await context.Contents.FirstOrDefaultAsync(c => c.Title.Equals(title));
+            return content;
+        }
+
+        public async Task<Content?> GetContentByTypeAsync(ContentType type)
+        {
+            var content = await context.Contents.FirstOrDefaultAsync(c => c.Type == type);
+            return content;
+        }
     }
 }

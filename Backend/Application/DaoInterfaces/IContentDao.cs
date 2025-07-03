@@ -11,5 +11,11 @@ namespace Application.DaoInterfaces
     {
         Task<IEnumerable<Content>> GetAllContentAsync();
         Task<Content?> GetContentByIdAsync(Guid id);
+
+        Task<Content?> GetContentByTitleAsync(string title);
+
+        Task<Content?> GetContentByTypeAsync(ContentType type);
+
+        Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased);
     }
 }
