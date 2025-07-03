@@ -97,5 +97,26 @@ namespace WebAPI.Controllers
             }
 
         }
+
+        [HttpGet("Released")]
+        public async Task<ActionResult<ContentDto>> GetContentByReleaseDate([FromQuery] DateTime releaseDate)
+        {
+            try
+            {
+                var content = await contentLogic.GetContentByRelaseDateAsync(releaseDate);
+
+                if (content == null)
+                {
+                    return NotFound($"Content with this relased date: {releaseDate} does not exist");
+                }
+
+                return Ok(content);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500);
+            }
+        }
     }
 }

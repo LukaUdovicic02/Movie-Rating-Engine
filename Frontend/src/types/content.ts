@@ -1,10 +1,10 @@
 export type ContentType = "Movie" | "TVShow";
 
-export interface ContentDto {
+export type ContentDto = {
   id: string;
   title: string;
   description: string;
   releaseDate: string;
   type: ContentType;
-  imageType: string;
-}
+  imageURL: string;
+};
