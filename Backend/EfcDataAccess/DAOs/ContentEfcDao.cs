@@ -47,5 +47,7 @@ namespace EfcDataAccess.DAOs
             var content = await context.Contents.FirstOrDefaultAsync(c => c.Type == type);
             return content;
         }
+
+       
     }
 }

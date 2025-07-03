@@ -10,7 +10,7 @@ namespace Application.LogicInterfaces
 {
     public interface IContentLogic
     {
-        Task<IEnumerable<ContentDto>> GetAllContentAsync() ;
+        Task<IEnumerable<ContentDto>> GetAllContentAsync();
         Task<ContentDto?> GetContentByIdAsync(Guid id);
 
         Task<ContentDto?> GetContentByTitleAsync(string title);

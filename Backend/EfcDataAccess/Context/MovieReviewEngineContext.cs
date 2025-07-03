@@ -71,7 +71,7 @@ namespace EfcDataAccess.Context
                    Description = "A great movie.",
                    ReleaseDate = new DateTime(2023, 1, 1),
                    Type = ContentType.Movie,
-                   ImageURL = "http://example.com/sample.jpg"
+                   ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image1.jpeg"
                },
                new Content
                {
@@ -80,7 +80,7 @@ namespace EfcDataAccess.Context
                    Description = "A great TV Show.",
                    ReleaseDate = new DateTime(2022, 5, 10),
                    Type = ContentType.TVShow,
-                   ImageURL = "http://example.com/sample2.jpg"
+                   ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image2.jpeg"
                }
    );
 

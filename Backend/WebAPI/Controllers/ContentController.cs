@@ -80,7 +80,6 @@ namespace WebAPI.Controllers
         {
             try
             {
-                Console.WriteLine($"type {type}");
                 var content = await contentLogic.GetContentByTypeAsync(type);          
 
                 if (content == null)

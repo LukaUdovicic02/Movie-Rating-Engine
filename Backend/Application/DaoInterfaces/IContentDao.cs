@@ -17,5 +17,7 @@ namespace Application.DaoInterfaces
         Task<Content?> GetContentByTypeAsync(ContentType type);
 
         Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased);
+
+       
     }
 }

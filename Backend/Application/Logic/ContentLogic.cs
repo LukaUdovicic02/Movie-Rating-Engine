@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.DaoInterfaces;
 using Application.LogicInterfaces;
+using Azure.Storage;
+using Azure.Storage.Blobs;
 using Domain.DTOs.ContentDtos;
 using Domain.Models;
 using Microsoft.VisualBasic;
@@ -20,6 +22,7 @@ namespace Application.Logic
         {
             contentDao = dao;
         }
+
 
         public async Task<IEnumerable<ContentDto>> GetAllContentAsync()
         {
@@ -101,7 +104,7 @@ namespace Application.Logic
 
         public async Task<ContentDto?> GetContentByTitleAsync(string title)
         {
-            if (title.Equals(String.IsNullOrEmpty))
+            if (string.IsNullOrEmpty(title))
             {
                 throw new ValidationException("Title cannot be empty");
             }
