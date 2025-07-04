@@ -27,7 +27,7 @@ const ContentPage = () => {
         <ToggleSwitch />
       </div>
 
-      <div className="flex justify-center flex-wrap gap-10 mt-8 ">
+      <div className="flex justify-center flex-wrap gap-10  mt-8 ">
         {loading ? (
           <p>Loading ...</p>
         ) : (

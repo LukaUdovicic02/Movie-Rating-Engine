@@ -6,7 +6,7 @@ type Props = {
 
 const ContentCard = ({ content }: Props) => {
   return (
-    <div className="border rounded-xl shadow p-4 bg-gray-200 max-w-[400px]">
+    <div className="border rounded-xl shadow p-4 bg-gray-200 lg:w-[400px] sm:w-[450px] xs:w-[95%] ">
       <img
         src={content.imageURL}
         alt={content.title}
