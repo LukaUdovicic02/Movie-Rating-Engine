@@ -16,15 +16,11 @@ const ContentPage = () => {
   const [searchDate, setSearchDate] = useState<string | undefined>();
 
   useEffect(() => {
-    const isSearching =
-      (searchTitle && searchTitle.length >= 2) ||
-      (searchDate && searchDate.length >= 2);
+    const isSearching = (searchTitle && searchTitle.length >= 2) || searchDate;
 
     setLoading(true);
 
     if (isSearching) {
-      console.log(searchTitle);
-      console.log(searchDate);
       searchContent(searchTitle, searchDate)
         .then((data) => setContent(data))
         .catch(console.error)
@@ -56,8 +52,6 @@ const ContentPage = () => {
       <div>
         <Search
           onSearchChange={(title, date) => {
-            setPage(1);
-            setContent([]);
             setSearchTitle(title);
             setSearchDate(date);
           }}
