@@ -19,35 +19,6 @@ namespace EfcDataAccess.DAOs
             this.context = context;
         }
 
-        public async Task<IEnumerable<Content>> GetAllContentAsync()
-        {
-            return await context.Contents.ToListAsync();
-        }
-
-        public async Task<Content?> GetContentByIdAsync(Guid id)
-        {
-            var content = await context.Contents.FirstOrDefaultAsync(c => c.ContentId == id);
-            return content;
-        }
-
-        public async Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased)
-        {
-            var content = await context.Contents.FirstOrDefaultAsync(c => c.ReleaseDate == dateRelased);
-            return content;
-        }
-
-        public async Task<Content?> GetContentByTitleAsync(string title)
-        {
-            var content = await context.Contents.FirstOrDefaultAsync(c => c.Title.Equals(title));
-            return content;
-        }
-
-        public async Task<Content?> GetContentByTypeAsync(ContentType type)
-        {
-            var content = await context.Contents.FirstOrDefaultAsync(c => c.Type == type);
-            return content;
-        }
-
         public async Task<IEnumerable<Content?>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize)
         {
             return await context
@@ -57,6 +28,22 @@ namespace EfcDataAccess.DAOs
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Content>> SearchContentAsync(string? title, DateTime? releasedDate)
+        {
+            IQueryable<Content> query = context.Contents;
+
+            if (!string.IsNullOrWhiteSpace(title))
+                query = query.Where(c => c.Title.ToLower().Equals(title.ToLower()));
+
+            if (releasedDate.HasValue)
+                query = query.Where(c => c.ReleaseDate > releasedDate.Value);
+
+            return await query.ToListAsync();
+        }
+
+
 
     }
+
+
 }

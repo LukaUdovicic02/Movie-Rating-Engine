@@ -10,14 +10,8 @@ namespace Application.DaoInterfaces
 {
     public interface IContentDao
     {
-        Task<IEnumerable<Content>> GetAllContentAsync();
-        Task<Content?> GetContentByIdAsync(Guid id);
 
-        Task<Content?> GetContentByTitleAsync(string title);
-
-        Task<Content?> GetContentByTypeAsync(ContentType type);
-
-        Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased);
+        Task<IEnumerable<Content?>> SearchContentAsync(string? title, DateTime? releasedDate);
 
         Task<IEnumerable<Content?>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize);
 

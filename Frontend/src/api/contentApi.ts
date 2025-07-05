@@ -3,11 +3,6 @@ import type { ContentDto, ContentType } from "../types/content";
 
 const BASE_URL = "https://localhost:7084/api/Content";
 
-export const getAllContent = async (): Promise<ContentDto[]> => {
-  const res = await axios.get(BASE_URL);
-  return res.data;
-};
-
 export const getContentByTypePaginated = async (
   type: ContentType,
   page: number,
@@ -24,19 +19,17 @@ export const getContentByTypePaginated = async (
   return res.data;
 };
 
-export const getContentById = async (id: string): Promise<ContentDto> => {
-  const res = await axios.get(`${BASE_URL}/${id}`);
-  return res.data;
-};
+export const searchContent = async (
+  title?: string,
+  releasedDate?: string
+): Promise<ContentDto[]> => {
+  const params: any = {};
+  if (title && title.length >= 2) params.title = title;
+  if (releasedDate) params.releasedDate = releasedDate;
 
-export const getContentByTitle = async (title: string): Promise<ContentDto> => {
-  const res = await axios.get(`${BASE_URL}/${title}`);
-  return res.data;
-};
+  const res = await axios.get(`${BASE_URL}/search`, {
+    params,
+  });
 
-export const getContentByType = async (
-  type: ContentType
-): Promise<ContentDto> => {
-  const res = await axios.get(`${BASE_URL}/${type}`);
   return res.data;
 };

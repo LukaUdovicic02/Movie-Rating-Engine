@@ -1,6 +1,6 @@
-import { use, useEffect, useState } from "react";
-import type { ContentDto } from "../../types/content";
-import { getContentByTypePaginated } from "../../api/contentApi";
+import { useEffect, useState } from "react";
+import type { ContentDto, ContentType } from "../../types/content";
+import { getContentByTypePaginated, searchContent } from "../../api/contentApi";
 import ContentCard from "../../components/ContentCard";
 import Search from "../../components/Search";
 import ToggleSwitch from "../../components/ToggleSwitch";
@@ -11,32 +11,47 @@ const ContentPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const [pageSize] = useState<number>(10);
+  const [type, setType] = useState<ContentType>("Movie");
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
-    setLoading(true);
-    getContentByTypePaginated("Movie", page, pageSize)
-      .then((newData) => {
-        if (content.length === 0) setContent(newData);
-        else setContent((prev) => [...prev, ...newData]);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [page]);
+    if (search.length >= 2) {
+      console.log("Search:", search);
+
+      searchContent(search)
+        .then((data) => setContent(data))
+        .catch(console.error);
+    } else {
+      setLoading(true);
+      getContentByTypePaginated(type, page, pageSize)
+        .then((newData) => {
+          setContent((prev) => (page === 1 ? newData : [...prev, ...newData]));
+        })
+        .catch(console.error)
+        .finally(() => setLoading(false));
+    }
+  }, [search, page, type]);
 
   const loadMore = () => {
     setPage((prev) => prev + 1);
   };
 
-  console.log(content.length);
+  const Switch = (newType: ContentType) => {
+    if (newType !== type) {
+      setPage(1);
+      setContent([]);
+      setType(newType);
+    }
+  };
 
   return (
     <div>
       <div>
-        <Search />
+        <Search onSearchChange={setSearch} />
       </div>
 
       <div>
-        <ToggleSwitch />
+        <ToggleSwitch onTypeChange={Switch} />
       </div>
 
       <div className="flex justify-center flex-wrap gap-12 mt-8 ">

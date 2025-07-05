@@ -24,138 +24,6 @@ namespace Application.Logic
         }
 
 
-        public async Task<IEnumerable<ContentDto>> GetAllContentAsync()
-        {
-            
-            var contents = await contentDao.GetAllContentAsync();
-
-            var dtos = contents.Select(c => new ContentDto
-            {
-               Id = c.ContentId,
-               Title = c.Title,
-               Description = c.Description,
-               ReleaseDate = c.ReleaseDate,
-               Type = c.Type,
-               ImageURL = c.ImageURL
-            });
-
-            return dtos;
-        }
-
-        public async Task<ContentDto?> GetContentByIdAsync(Guid id)
-        {
-
-            if (id == Guid.Empty)
-            {
-                throw new ValidationException("Content cannot be empty");
-            }
-
-            var content = await contentDao.GetContentByIdAsync(id);
-
-            if (content == null) {
-                return null;
-            }
-
-            var dtos = new ContentDto
-            {
-                Id = content.ContentId,
-                Title = content.Title,
-                Description = content.Description,
-                ReleaseDate = content.ReleaseDate,
-                Type = content.Type,
-                ImageURL = content.ImageURL
-            };
-
-            return dtos;
-        }
-
-        public async Task<ContentDto?> GetContentByRelaseDateAsync(DateTime dateRelased)
-        {
-
-            if(dateRelased > DateTime.Now)
-            {
-                throw new ValidationException("Content cannot be after todays date");
-            }
-
-            if (dateRelased < new DateTime(1900, 1,1))
-            {
-                throw new ValidationException("Content relased date cannot be before 1900");
-            }
-
-            var content = await contentDao.GetContentByRelaseDateAsync(dateRelased);
-
-            if (content == null)
-            {
-                return null;
-            }
-
-            var dtos = new ContentDto
-            {
-                Id = content.ContentId,
-                Title = content.Title,
-                Description = content.Description,
-                ReleaseDate = content.ReleaseDate,
-                Type = content.Type,
-                ImageURL = content.ImageURL
-            };
-
-            return dtos;
-        }
-
-        public async Task<ContentDto?> GetContentByTitleAsync(string title)
-        {
-            if (string.IsNullOrEmpty(title))
-            {
-                throw new ValidationException("Title cannot be empty");
-            }
-
-            var content = await contentDao.GetContentByTitleAsync(title);
-
-            if (content == null)
-            {
-                return null;
-            }
-
-            var dtos = new ContentDto
-            {
-                Id = content.ContentId,
-                Title = content.Title,
-                Description = content.Description,
-                ReleaseDate = content.ReleaseDate,
-                Type = content.Type,
-                ImageURL = content.ImageURL
-            };
-
-            return dtos;
-        }
-
-        public async Task<ContentDto?> GetContentByTypeAsync(ContentType type)
-        {
-            if (type != ContentType.Movie && type != ContentType.TVShow)
-            {
-                throw new ValidationException("Type can be only Movie or TV Show");
-            }
-
-            var content = await contentDao.GetContentByTypeAsync(type);
-
-            if (content == null)
-            {
-                return null;
-            }
-
-            var dtos = new ContentDto
-            {
-                Id = content.ContentId,
-                Title = content.Title,
-                Description = content.Description,
-                ReleaseDate = content.ReleaseDate,
-                Type = content.Type,
-                ImageURL = content.ImageURL
-            };
-
-            return dtos;
-        }
-
         public async Task<IEnumerable<ContentDto>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize)
         {
             if (page < 1)
@@ -182,6 +50,28 @@ namespace Application.Logic
 
             return dtos;
 
+        }
+
+        public async Task<IEnumerable<ContentDto>> SearchContentAsync(string? title, DateTime? releasedDate)
+        {
+            if (string.IsNullOrWhiteSpace(title) && releasedDate == null)
+            {
+                throw new ValidationException("At least one parameter should be provided");
+            }
+
+            var content = await contentDao.SearchContentAsync(title, releasedDate);
+
+            var dtos = content.Select(c => new ContentDto
+            {
+                Id = c.ContentId,
+                Title = c.Title,
+                Description = c.Description,
+                ReleaseDate = c.ReleaseDate,
+                Type = c.Type,
+                ImageURL = c.ImageURL
+            });
+
+            return dtos;
         }
     }
 }
