@@ -15,8 +15,6 @@ function Search({ onSearchChange }: Props) {
     const val = e.target.value;
     setValue(val);
 
-    if (val.length < 2) return;
-
     if (isDateFormat(val)) {
       onSearchChange(undefined, val);
     } else {

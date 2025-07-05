@@ -16,12 +16,20 @@ const ContentPage = () => {
   const [searchDate, setSearchDate] = useState<string | undefined>();
 
   useEffect(() => {
-    if ((searchTitle && searchTitle.length >= 2) || searchDate) {
+    const isSearching =
+      (searchTitle && searchTitle.length >= 2) ||
+      (searchDate && searchDate.length >= 2);
+
+    setLoading(true);
+
+    if (isSearching) {
+      console.log(searchTitle);
+      console.log(searchDate);
       searchContent(searchTitle, searchDate)
         .then((data) => setContent(data))
-        .catch(console.error);
+        .catch(console.error)
+        .finally(() => setLoading(false));
     } else {
-      setLoading(true);
       getContentByTypePaginated(type, page, pageSize)
         .then((newData) => {
           setContent((prev) => (page === 1 ? newData : [...prev, ...newData]));
@@ -48,6 +56,8 @@ const ContentPage = () => {
       <div>
         <Search
           onSearchChange={(title, date) => {
+            setPage(1);
+            setContent([]);
             setSearchTitle(title);
             setSearchDate(date);
           }}
