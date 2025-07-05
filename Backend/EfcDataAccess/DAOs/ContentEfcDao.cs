@@ -48,6 +48,15 @@ namespace EfcDataAccess.DAOs
             return content;
         }
 
-       
+        public async Task<IEnumerable<Content?>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize)
+        {
+            return await context
+                .Contents.Where(t => t.Type.Equals(type))
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+
+
     }
 }

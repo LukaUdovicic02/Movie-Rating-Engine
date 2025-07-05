@@ -16,6 +16,7 @@ namespace WebAPI.Controllers
             this.contentLogic = contentLogic;
         }
 
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ContentDto>>> GetAllContent()
         {
@@ -24,6 +25,26 @@ namespace WebAPI.Controllers
                 var content = await contentLogic.GetAllContentAsync();
 
                 return Ok(content);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpGet("type")]
+        public async Task<ActionResult<IEnumerable<ContentDto>>> GetContentByTypePaginated(
+            [FromQuery] ContentType type,
+            [FromQuery] int page = 1, 
+            [FromQuery] int pageSize = 10
+            )
+        {
+            try
+            {
+                var content = await contentLogic.GetContentsByTypePaginatedAsync(type, page, pageSize);
+                return Ok(content);
+
             }
             catch (Exception ex)
             {
@@ -75,28 +96,6 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("type")]
-        public async Task<ActionResult<ContentDto>> GetContentByType([FromQuery] ContentType type)
-        {
-            try
-            {
-                var content = await contentLogic.GetContentByTypeAsync(type);          
-
-                if (content == null)
-                {
-                    return NotFound("Content does not match 'Movie' or 'TV Show'");
-                }
-
-                return Ok(content);
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return StatusCode(500);
-            }
-
-        }
 
         [HttpGet("Released")]
         public async Task<ActionResult<ContentDto>> GetContentByReleaseDate([FromQuery] DateTime releaseDate)

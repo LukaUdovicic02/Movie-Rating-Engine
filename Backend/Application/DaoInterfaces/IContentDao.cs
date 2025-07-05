@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.DTOs.ContentDtos;
 using Domain.Models;
 
 namespace Application.DaoInterfaces
@@ -18,6 +19,9 @@ namespace Application.DaoInterfaces
 
         Task<Content?> GetContentByRelaseDateAsync(DateTime dateRelased);
 
-       
+        Task<IEnumerable<Content?>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize);
+
+
+
     }
 }

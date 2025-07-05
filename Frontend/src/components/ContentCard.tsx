@@ -6,11 +6,11 @@ type Props = {
 
 const ContentCard = ({ content }: Props) => {
   return (
-    <div className="border rounded-xl shadow p-4 bg-gray-200 lg:w-[400px] sm:w-[450px] xs:w-[95%] ">
+    <div className="border rounded-xl shadow p-4 bg-gray-200 lg:w-[300px] sm:w-[350px] xs:w-[95%] ">
       <img
         src={content.imageURL}
         alt={content.title}
-        className="h-82 w-full object-cover rounded-lg"
+        className="h-72 w-52  object-cover rounded-lg"
       />
       <h2 className="font-bold mt-2 text-xl">{content.title}</h2>
       <p className="mt-2 text-md">{content.description}</p>

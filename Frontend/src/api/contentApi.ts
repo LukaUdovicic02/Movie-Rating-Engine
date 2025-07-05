@@ -8,6 +8,22 @@ export const getAllContent = async (): Promise<ContentDto[]> => {
   return res.data;
 };
 
+export const getContentByTypePaginated = async (
+  type: ContentType,
+  page: number,
+  pageSize: number
+): Promise<ContentDto[]> => {
+  const res = await axios.get(`${BASE_URL}/type`, {
+    params: {
+      type,
+      page,
+      pageSize,
+    },
+  });
+
+  return res.data;
+};
+
 export const getContentById = async (id: string): Promise<ContentDto> => {
   const res = await axios.get(`${BASE_URL}/${id}`);
   return res.data;

@@ -155,6 +155,34 @@ namespace Application.Logic
 
             return dtos;
         }
+
+        public async Task<IEnumerable<ContentDto>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize)
+        {
+            if (page < 1)
+                throw new ValidationException("Page number must be at least 1");
+
+            if (pageSize < 1)
+                throw new ValidationException("Page size must be at least 1");
+
+            if (pageSize > 10)
+                throw new ValidationException("Page size cannot exceed 10");
+
+
+            var content = await contentDao.GetContentsByTypePaginatedAsync(type, page, pageSize);
+
+            var dtos = content.Select(c => new ContentDto
+            {
+                Id = c.ContentId,
+                Title = c.Title,
+                Description = c.Description,
+                ReleaseDate = c.ReleaseDate,
+                Type = c.Type,
+                ImageURL = c.ImageURL
+            });
+
+            return dtos;
+
+        }
     }
 }
 

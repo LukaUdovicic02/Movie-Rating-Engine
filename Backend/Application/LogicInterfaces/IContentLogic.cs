@@ -19,5 +19,8 @@ namespace Application.LogicInterfaces
 
         Task<ContentDto?> GetContentByRelaseDateAsync(DateTime dateRelased);
 
+        Task<IEnumerable<ContentDto>> GetContentsByTypePaginatedAsync(ContentType type, int page, int pageSize);
+
+
     }
 }
