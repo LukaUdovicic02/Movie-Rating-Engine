@@ -21,11 +21,11 @@ export const getContentByTypePaginated = async (
 
 export const searchContent = async (
   title?: string,
-  releasedDate?: string
+  releaseDate?: string
 ): Promise<ContentDto[]> => {
   const params: any = {};
   if (title && title.length >= 2) params.title = title;
-  if (releasedDate) params.releasedDate = releasedDate;
+  if (releaseDate) params.releaseDate = releaseDate;
 
   const res = await axios.get(`${BASE_URL}/search`, {
     params,

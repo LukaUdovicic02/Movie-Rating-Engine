@@ -28,15 +28,15 @@ namespace EfcDataAccess.DAOs
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Content>> SearchContentAsync(string? title, DateTime? releasedDate)
+        public async Task<IEnumerable<Content>> SearchContentAsync(string? title, DateTime? releaseDate)
         {
             IQueryable<Content> query = context.Contents;
 
             if (!string.IsNullOrWhiteSpace(title))
                 query = query.Where(c => c.Title.ToLower().Equals(title.ToLower()));
 
-            if (releasedDate.HasValue)
-                query = query.Where(c => c.ReleaseDate > releasedDate.Value);
+            if (releaseDate.HasValue)
+                query = query.Where(c => c.ReleaseDate > releaseDate.Value);
 
             return await query.ToListAsync();
         }

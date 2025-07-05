@@ -39,11 +39,11 @@ namespace WebAPI.Controllers
         [HttpGet("Search")]
         public async Task<ActionResult<IEnumerable<ContentDto>>> SearchContent(
             [FromQuery] string? title,
-            [FromQuery] DateTime? relaseDate)
+            [FromQuery] DateTime? releaseDate)
         {
             try
             {
-                var content = await contentLogic.SearchContentAsync(title, relaseDate);
+                var content = await contentLogic.SearchContentAsync(title, releaseDate);
                 return Ok(content);
             }
             catch (Exception ex)

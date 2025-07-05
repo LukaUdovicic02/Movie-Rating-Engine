@@ -12,13 +12,12 @@ const ContentPage = () => {
   const [page, setPage] = useState<number>(1);
   const [pageSize] = useState<number>(10);
   const [type, setType] = useState<ContentType>("Movie");
-  const [search, setSearch] = useState<string>("");
+  const [searchTitle, setSearchTitle] = useState<string | undefined>();
+  const [searchDate, setSearchDate] = useState<string | undefined>();
 
   useEffect(() => {
-    if (search.length >= 2) {
-      console.log("Search:", search);
-
-      searchContent(search)
+    if ((searchTitle && searchTitle.length >= 2) || searchDate) {
+      searchContent(searchTitle, searchDate)
         .then((data) => setContent(data))
         .catch(console.error);
     } else {
@@ -30,7 +29,7 @@ const ContentPage = () => {
         .catch(console.error)
         .finally(() => setLoading(false));
     }
-  }, [search, page, type]);
+  }, [searchTitle, searchDate, page, type]);
 
   const loadMore = () => {
     setPage((prev) => prev + 1);
@@ -47,7 +46,12 @@ const ContentPage = () => {
   return (
     <div>
       <div>
-        <Search onSearchChange={setSearch} />
+        <Search
+          onSearchChange={(title, date) => {
+            setSearchTitle(title);
+            setSearchDate(date);
+          }}
+        />
       </div>
 
       <div>
