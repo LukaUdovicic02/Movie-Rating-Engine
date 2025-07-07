@@ -3,6 +3,7 @@ using System;
 using EfcDataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EfcDataAccess.Migrations
 {
     [DbContext(typeof(MovieReviewEngineContext))]
-    partial class MovieReviewEngineContextModelSnapshot : ModelSnapshot
+    [Migration("20250706114231_SeedCastContent2")]
+    partial class SeedCastContent2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -709,7 +712,7 @@ namespace EfcDataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            ContentId = new Guid("0cfd88e9-3dd4-47bb-9c92-d3036285d487"),
+                            ContentId = new Guid("90c76c9b-d343-49d9-a899-076a322907d4"),
                             Description = "A romantic drama set during WWII in Casablanca.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image1.jpg",
                             ReleaseDate = new DateTime(1942, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -718,7 +721,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("f9af5ac8-3958-4921-bbad-92fc78c96c15"),
+                            ContentId = new Guid("d687c1a1-c935-4d62-8e83-04f373b672a9"),
                             Description = "A newspaper magnate’s rise and fall.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image2.jpg",
                             ReleaseDate = new DateTime(1941, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -727,7 +730,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("4df096f1-a0aa-4f9a-875b-b6d84be1c803"),
+                            ContentId = new Guid("b6a36491-b374-4627-a843-57c2b8274d94"),
                             Description = "A voyage through space and time.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image3.jpg",
                             ReleaseDate = new DateTime(1968, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -736,7 +739,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("e7a26c01-14cf-4d7f-9e6e-f8b479de9ee9"),
+                            ContentId = new Guid("62aac5dc-88fd-447a-9780-c8ab23215fb7"),
                             Description = "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image4.jpg",
                             ReleaseDate = new DateTime(1972, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -745,7 +748,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("7efb6fc8-3e69-40c0-ab42-c9b27aad567c"),
+                            ContentId = new Guid("2e79d414-1e8d-4f0a-8ef3-0f913e1ac9d5"),
                             Description = "A great white shark terrorizes a summer resort town.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image5.jpg",
                             ReleaseDate = new DateTime(1975, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -754,7 +757,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("bf02ebeb-3437-430d-9d3f-6e30b1330686"),
+                            ContentId = new Guid("413f534c-8b01-43a2-b243-87ef6eefef7a"),
                             Description = "A lost alien befriends a boy in suburbia.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image6.jpg",
                             ReleaseDate = new DateTime(1982, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -763,7 +766,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("ed24da88-cbfd-490a-b525-af07fa3c438c"),
+                            ContentId = new Guid("f0fd6b2d-4337-4276-a6db-7a1fdfbc5f8b"),
                             Description = "The story of Oskar Schindler and his efforts to save Jews during the Holocaust.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image7.jpg",
                             ReleaseDate = new DateTime(1993, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -772,7 +775,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("c431d325-9ca3-4160-8776-5a464953d429"),
+                            ContentId = new Guid("396b58c6-679f-4fd7-98ac-f3b3e0a75b90"),
                             Description = "A hacker discovers reality is an illusion.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image8.jpg",
                             ReleaseDate = new DateTime(1999, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -781,7 +784,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("591a1985-d8e9-4d8c-90d5-73a1ebbe3c94"),
+                            ContentId = new Guid("e42fdfd9-c87c-44f1-aff1-1b4ddf698704"),
                             Description = "A Roman general becomes a gladiator.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image9.jpg",
                             ReleaseDate = new DateTime(2000, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -790,7 +793,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("54164c35-ac52-444d-aa19-22c2678402c6"),
+                            ContentId = new Guid("6ebddb8d-e8bd-4987-8c18-938d843fdfbb"),
                             Description = "Batman faces the Joker.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image10.jpg",
                             ReleaseDate = new DateTime(2008, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -799,7 +802,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("ecb09277-5bd4-4e82-b8bc-dd00e0c3f6b5"),
+                            ContentId = new Guid("91dca634-d680-48f2-ae74-1c76f9489dda"),
                             Description = "A thief who steals corporate secrets through dream-sharing.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image11.jpg",
                             ReleaseDate = new DateTime(2010, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -808,7 +811,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("f178ea48-e037-4c6f-aa7b-d96d7f570e78"),
+                            ContentId = new Guid("f822e89f-0486-44a0-a5e8-94fb2dc88802"),
                             Description = "A free black man is kidnapped and sold into slavery.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image12.jpg",
                             ReleaseDate = new DateTime(2013, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -817,7 +820,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("dd5b73c9-151a-4c0d-b2f8-a49dbb13d868"),
+                            ContentId = new Guid("c758ca48-fb3f-4408-b705-bfd5e4560791"),
                             Description = "Post-apocalyptic road war.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image13.jpg",
                             ReleaseDate = new DateTime(2015, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -826,7 +829,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("0a29e8c7-ae78-43b4-9f46-d4476ec2c913"),
+                            ContentId = new Guid("85eb7bb5-697b-409f-9c39-022586eaf790"),
                             Description = "A young black man grows up in Miami.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image14.jpg",
                             ReleaseDate = new DateTime(2016, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -835,7 +838,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("c875f04e-727b-4bbb-9d26-6f0c0fa7c6d3"),
+                            ContentId = new Guid("62422f6f-8992-4cdd-9a63-f54998cfcfe7"),
                             Description = "Poor family infiltrates a wealthy household.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image15.jpg",
                             ReleaseDate = new DateTime(2019, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -844,7 +847,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("a19c9c19-4bcb-4012-841e-65684308338d"),
+                            ContentId = new Guid("f4c0ab0b-de23-4ddf-ae88-e93d0e5a8672"),
                             Description = "A woman lives as a van-dwelling modern nomad.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image16.jpg",
                             ReleaseDate = new DateTime(2020, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -853,7 +856,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("1f133a10-6439-408f-b758-e59febd010be"),
+                            ContentId = new Guid("fb7d90dd-bd4b-4c36-870d-776e863e37b6"),
                             Description = "A son of a noble family leads a rebellion on a desert planet.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image17.jpg",
                             ReleaseDate = new DateTime(2021, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -862,7 +865,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("fd31d9c5-4ed4-4afd-b690-2ce1729691fe"),
+                            ContentId = new Guid("af1edf42-16c3-429a-b018-f0dfea8f4ec2"),
                             Description = "A multiverse adventure through family and identity.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image18.jpg",
                             ReleaseDate = new DateTime(2022, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -871,7 +874,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("ea61a7f8-81c1-4de9-8b95-8ca5372e4c49"),
+                            ContentId = new Guid("241ce8a1-b37e-4550-afa0-82b86b075260"),
                             Description = "A naval aviator returns as a flight instructor.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image19.jpg",
                             ReleaseDate = new DateTime(2022, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -880,7 +883,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("e1eb4251-7a0b-406d-84fc-c22dee281fe4"),
+                            ContentId = new Guid("02e1a9db-45ca-41cc-bda4-570f7289b523"),
                             Description = "The story of the father of the atomic bomb.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image20.jpg",
                             ReleaseDate = new DateTime(2023, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -889,7 +892,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("4ea3431e-0031-4f3f-8984-4b000dca25cd"),
+                            ContentId = new Guid("47e12470-4e85-425c-bf7d-2d6bf6d7a84b"),
                             Description = "A journey of self-discovery in Barbie Land.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image21.jpg",
                             ReleaseDate = new DateTime(2023, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -898,7 +901,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("fd655b0a-61f1-4470-9444-f950b92ee17a"),
+                            ContentId = new Guid("85a4a935-0c59-41bf-9823-45b13002a300"),
                             Description = "A true-crime saga in 1920s Oklahoma.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image22.jpg",
                             ReleaseDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -907,7 +910,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("e21acfd9-a7e9-4f16-b1bf-b65a7f66b1e6"),
+                            ContentId = new Guid("a582f922-fadf-49a4-b18b-497fa122f023"),
                             Description = "A Victorian tale of a woman brought back to life.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image23.jpg",
                             ReleaseDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -916,7 +919,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("7f3381be-d130-4c24-b6e6-4f200a13a9ed"),
+                            ContentId = new Guid("2aeaf448-22b9-465c-be67-dfb2ace2c458"),
                             Description = "Miles Morales returns for more multiverse action.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image24.jpg",
                             ReleaseDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -925,7 +928,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("61820f2e-dd92-40ec-8548-98b578cabd05"),
+                            ContentId = new Guid("402522a2-f0b9-4f84-8c7a-d9462c78ef5a"),
                             Description = "A reclusive teacher tries to reconnect with his daughter.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image25.jpg",
                             ReleaseDate = new DateTime(2022, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -934,7 +937,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("9cfebc12-d208-46a8-a744-99fc08a0574f"),
+                            ContentId = new Guid("a9ceedbc-9fe6-4bca-b5ca-e0a5f6c8ebf2"),
                             Description = "A rancher responds brutally to a new marriage.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image26.jpg",
                             ReleaseDate = new DateTime(2021, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -943,7 +946,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("b464f02f-7a27-4cea-877b-062a7dd9dfdc"),
+                            ContentId = new Guid("29d8d4cd-a6fd-46e2-a87a-2af9bd1494a7"),
                             Description = "Dramatization of a famous protest trial.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image27.jpg",
                             ReleaseDate = new DateTime(2020, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -952,7 +955,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("6e8b6fd3-2ab6-4ffc-b4b9-2bcc660e6e62"),
+                            ContentId = new Guid("582c515e-d46f-40f3-b861-7318aee20fc8"),
                             Description = "A musician travels from Earth to the afterlife.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image28.jpg",
                             ReleaseDate = new DateTime(2020, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -961,7 +964,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("7a9f3ac9-ddf7-4289-8351-a936e6c02a56"),
+                            ContentId = new Guid("62c2b91a-4687-49c4-9216-89c45d6d5389"),
                             Description = "Post-apocalyptic survival drama (film adaption placeholder).",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/movie-image29.jpg",
                             ReleaseDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -970,7 +973,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("06f61290-9420-4a7a-8a03-26ef4fd5be9e"),
+                            ContentId = new Guid("c3b24b84-f3ea-4f95-a42b-218d75da3976"),
                             Description = "A mafia boss tries to balance crime and family.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image1.jpg",
                             ReleaseDate = new DateTime(1999, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -979,7 +982,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("9edbb15c-b983-450c-b3dd-e18a72627041"),
+                            ContentId = new Guid("bb2b8c78-1b77-40f2-a5f2-8a81bdf25975"),
                             Description = "An in-depth look into crime, bureaucracy and society in Baltimore.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image2.jpg",
                             ReleaseDate = new DateTime(2002, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -988,7 +991,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("75e7007f-9c37-4ba5-9a67-015fa83246f4"),
+                            ContentId = new Guid("84754702-89cc-408f-8882-00498ebf67ea"),
                             Description = "A chemistry teacher becomes a meth kingpin.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image3.jpg",
                             ReleaseDate = new DateTime(2008, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -997,7 +1000,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("a7b14e84-b635-4dda-8f79-bc30e55658f9"),
+                            ContentId = new Guid("8552137a-916f-46c9-95ce-44ff91ceab5f"),
                             Description = "Noble families vie for power in a mythical land.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image4.jpg",
                             ReleaseDate = new DateTime(2011, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1006,7 +1009,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("7b7b41bf-ca8e-41ac-af17-77a9ac28de61"),
+                            ContentId = new Guid("23e929db-60fd-4a66-8958-8bf9e9bb767d"),
                             Description = "Kids uncover government secrets and supernatural horrors in 1980s Indiana.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image5.jpg",
                             ReleaseDate = new DateTime(2016, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1015,7 +1018,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("059d1f15-5e73-4185-8443-732fb93896cf"),
+                            ContentId = new Guid("bc08b4c0-0bc8-4c3b-a2d3-431850ab4fc4"),
                             Description = "A dramatized history of the British royal family.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image6.jpg",
                             ReleaseDate = new DateTime(2016, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1024,7 +1027,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("2af5266a-d50f-4e28-80c5-6c093760af08"),
+                            ContentId = new Guid("f2af78e0-804e-4310-bbea-1de81ddf22a4"),
                             Description = "A lone bounty hunter in the Star Wars universe.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image7.jpg",
                             ReleaseDate = new DateTime(2019, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1033,7 +1036,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("46a0b1b5-29de-4cdd-b5b7-b764354c56c6"),
+                            ContentId = new Guid("6f6e6ecb-13db-41bd-94de-a29cd04806d2"),
                             Description = "A mockumentary about office workers in Scranton, PA.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image8.jpg",
                             ReleaseDate = new DateTime(2005, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1042,7 +1045,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("9f71a630-2713-42b2-9cd0-c9b126692dc9"),
+                            ContentId = new Guid("9aa750e1-8af7-40f3-a6d4-0a88fec4f3a6"),
                             Description = "Six friends navigating life in New York City.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image9.jpg",
                             ReleaseDate = new DateTime(1994, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1051,7 +1054,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("70523ed1-d035-4abc-af12-874912c8eacb"),
+                            ContentId = new Guid("5166927f-fc43-450c-8a3a-d0c4f9841b02"),
                             Description = "A show about nothing centered on a quirky group of friends.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image10.jpg",
                             ReleaseDate = new DateTime(1989, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1060,7 +1063,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("832a5fae-4e9c-42a2-8a8a-be7cb71d72cf"),
+                            ContentId = new Guid("661ee8f1-c4d7-452b-9639-3a825afffea5"),
                             Description = "The story of criminal lawyer Saul Goodman before Breaking Bad.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image11.jpg",
                             ReleaseDate = new DateTime(2015, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1069,7 +1072,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("a8d9245a-3e55-4560-b647-30b53ec7ad49"),
+                            ContentId = new Guid("ad11ce42-4aa3-4475-baf9-60301316ff24"),
                             Description = "A group takes on corrupt superheroes.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image12.jpg",
                             ReleaseDate = new DateTime(2019, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1078,7 +1081,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("f4f62b79-258c-458f-8cbc-3e83cc5036f2"),
+                            ContentId = new Guid("6ad559db-1d29-458b-9115-04fbba4c1345"),
                             Description = "A hardened survivor escorts a girl across post-apocalyptic America.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image13.jpg",
                             ReleaseDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1087,7 +1090,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("92b385db-c0c3-41b1-af1a-58de3d96f93d"),
+                            ContentId = new Guid("04d9be76-941b-4906-80c6-d8af43337eef"),
                             Description = "Desperate contestants play deadly children's games for money.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image14.jpg",
                             ReleaseDate = new DateTime(2021, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1096,7 +1099,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("a02be860-6df6-4a5a-93fb-4366c68f4173"),
+                            ContentId = new Guid("3d6e999b-82d0-47d3-8322-f93efee3ff9c"),
                             Description = "A prequel to Game of Thrones about House Targaryen.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image15.jpg",
                             ReleaseDate = new DateTime(2022, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1105,7 +1108,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("4bc3413a-0ba8-41e3-a812-7033d414723a"),
+                            ContentId = new Guid("d4fb8dd6-96fb-4def-b65c-434dfdcf35c2"),
                             Description = "A gangster family in post-WWI Birmingham, England.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image16.jpg",
                             ReleaseDate = new DateTime(2013, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1114,7 +1117,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("beb741d5-4de3-4ca1-bdab-8c09aaa8e2e4"),
+                            ContentId = new Guid("ebb734ba-d537-4452-8f7a-8c02f0cea047"),
                             Description = "A dystopian society where women are forced into servitude.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image17.jpg",
                             ReleaseDate = new DateTime(2017, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1123,7 +1126,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("31b40b96-c94d-4e8a-962c-542848fe9cf7"),
+                            ContentId = new Guid("f4784ef8-bb6b-49d0-968b-395878f3b7b2"),
                             Description = "A theme park where robots develop consciousness.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image18.jpg",
                             ReleaseDate = new DateTime(2016, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1132,7 +1135,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("b0fc72dc-d6a7-4102-b076-070463d95cf1"),
+                            ContentId = new Guid("fa2c7242-4fc3-4bd3-9ca8-5ce5e05be1de"),
                             Description = "A dramatization of the 1986 nuclear disaster.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image19.jpg",
                             ReleaseDate = new DateTime(2019, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1141,7 +1144,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("9d03bfbc-5cce-4579-94b0-935815eff10f"),
+                            ContentId = new Guid("64e40244-44e6-48bf-a7dc-82134536aff3"),
                             Description = "A young chess prodigy rises amid addiction and competition.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image20.jpg",
                             ReleaseDate = new DateTime(2020, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1150,7 +1153,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("d79b763e-4ccf-4af2-8199-751cc76c460d"),
+                            ContentId = new Guid("2dc39416-ae01-402f-9d82-cef2b139c763"),
                             Description = "A German sci-fi thriller involving time travel.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image21.jpg",
                             ReleaseDate = new DateTime(2017, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1159,7 +1162,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("aa38ead2-6eba-4e23-971b-fb8433fd7ebc"),
+                            ContentId = new Guid("c00be769-71f1-4f59-b4f5-cdcd23c1cd92"),
                             Description = "Anthology series exploring technology's dark side.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image22.jpg",
                             ReleaseDate = new DateTime(2011, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1168,7 +1171,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("7644bacb-00a1-41d1-9304-54c30643c701"),
+                            ContentId = new Guid("ab8ae334-2059-499f-8891-9a79157ec265"),
                             Description = "Crime stories in the Midwest with dark humor.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image23.jpg",
                             ReleaseDate = new DateTime(2014, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1177,7 +1180,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("4c0163de-c05d-48d1-8b89-2fcb944a0d84"),
+                            ContentId = new Guid("641c24e0-bd8c-4dd0-a66f-b43b914c3611"),
                             Description = "A family launders drug money in Missouri.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image24.jpg",
                             ReleaseDate = new DateTime(2017, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1186,7 +1189,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("f6afb32d-5be6-4c40-9666-8845380da7a7"),
+                            ContentId = new Guid("dd8428b0-2fab-4f5c-9564-4608b84be396"),
                             Description = "A powerful family's battle for control of a media empire.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image25.jpg",
                             ReleaseDate = new DateTime(2018, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1195,7 +1198,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("0109d92a-1841-41bd-99fa-d61dddecb14d"),
+                            ContentId = new Guid("92f824c9-0bae-4956-a436-db16711be332"),
                             Description = "A kind-hearted coach leads a UK soccer team.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image26.jpg",
                             ReleaseDate = new DateTime(2020, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1204,7 +1207,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("6411c160-6cd6-4234-a9a8-1d6847f9c440"),
+                            ContentId = new Guid("b5a2fc0e-2743-4728-b966-df588adfa86c"),
                             Description = "The god of mischief causes chaos across timelines.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image27.jpg",
                             ReleaseDate = new DateTime(2021, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1213,7 +1216,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("812045e3-8584-45ac-8b3e-118566f1e505"),
+                            ContentId = new Guid("7e64b9b4-5d07-46a5-9aa6-80519b15d76d"),
                             Description = "Superpowered couple trapped in a sitcom reality.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image28.jpg",
                             ReleaseDate = new DateTime(2021, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1222,7 +1225,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("ae89f7e1-5363-47f7-97d0-28508a32067b"),
+                            ContentId = new Guid("7af4eb79-f5c3-43fb-ab05-89dffe93d221"),
                             Description = "A chef returns to run his family’s sandwich shop in Chicago.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image29.jpg",
                             ReleaseDate = new DateTime(2022, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1231,7 +1234,7 @@ namespace EfcDataAccess.Migrations
                         },
                         new
                         {
-                            ContentId = new Guid("bb4b1fb5-1c77-4e31-89d8-664e0ff47885"),
+                            ContentId = new Guid("b069584c-6e80-469d-934f-e0d33915de7f"),
                             Description = "Wednesday Addams navigates high school and murder mysteries.",
                             ImageURL = "https://mreimagestorage.blob.core.windows.net/imagecontainer/tv-image30.jpg",
                             ReleaseDate = new DateTime(2022, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1253,6 +1256,648 @@ namespace EfcDataAccess.Migrations
                     b.HasIndex("CastId");
 
                     b.ToTable("ContentCasts");
+
+                    b.HasData(
+                        new
+                        {
+                            ContentId = new Guid("d5fbdd72-4ea5-424e-b8fd-491c014b5a18"),
+                            CastId = new Guid("f7b6e9d0-1f24-4c58-a5d3-111111111111")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("d5fbdd72-4ea5-424e-b8fd-491c014b5a18"),
+                            CastId = new Guid("e2c1f1a7-4a56-4eab-bd2d-222222222222")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("d5fbdd72-4ea5-424e-b8fd-491c014b5a18"),
+                            CastId = new Guid("d9f3a7d3-2b16-4d4d-b8b8-333333333333")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("54f5614e-ff0c-4a6b-a644-cb568e7720a3"),
+                            CastId = new Guid("a8d3f35c-c7d4-4a88-9111-444444444444")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("54f5614e-ff0c-4a6b-a644-cb568e7720a3"),
+                            CastId = new Guid("b1d1f57e-66f0-4b1d-bb1c-555555555555")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("54f5614e-ff0c-4a6b-a644-cb568e7720a3"),
+                            CastId = new Guid("c7d3a5b1-e4b7-4eae-8d6e-666666666666")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("e6f10daa-2ed0-4732-840d-d395418d8589"),
+                            CastId = new Guid("2e70b7a4-84e0-43a6-93b8-777777777777")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("e6f10daa-2ed0-4732-840d-d395418d8589"),
+                            CastId = new Guid("bbfc7892-d752-4d9f-92a2-888888888888")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("e6f10daa-2ed0-4732-840d-d395418d8589"),
+                            CastId = new Guid("975f7c8c-4f9c-4ebd-8284-999999999999")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("718cee37-b5c0-48cf-9068-a57da68f6e99"),
+                            CastId = new Guid("84d3f779-14f1-4c88-b9d7-aaaaaaaaaaaa")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("718cee37-b5c0-48cf-9068-a57da68f6e99"),
+                            CastId = new Guid("b3f8c7aa-43c7-43ad-b765-bbbbbbbbbbbb")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("718cee37-b5c0-48cf-9068-a57da68f6e99"),
+                            CastId = new Guid("96e63e2d-7c65-4d44-984e-cccccccccccc")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b155dbf1-73c1-48f8-b7e9-ed919296095b"),
+                            CastId = new Guid("38a62e4d-8bca-4ec6-9f27-dddddddddddd")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b155dbf1-73c1-48f8-b7e9-ed919296095b"),
+                            CastId = new Guid("a1b2c3d4-5e6f-4a7b-8c9d-eeeeeeeeeeee")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b155dbf1-73c1-48f8-b7e9-ed919296095b"),
+                            CastId = new Guid("f1e2d3c4-b5a6-4789-9012-ffffffffffff")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("1bc54ced-4250-4ffa-8a36-668885bb8130"),
+                            CastId = new Guid("12345678-9abc-def0-1234-111111111111")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("1bc54ced-4250-4ffa-8a36-668885bb8130"),
+                            CastId = new Guid("23456789-abcd-ef01-2345-222222222222")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("1bc54ced-4250-4ffa-8a36-668885bb8130"),
+                            CastId = new Guid("3456789a-bcde-f012-3456-333333333333")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("becaa2ea-dd4a-4782-9426-a06c757b3ac7"),
+                            CastId = new Guid("10000000-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("becaa2ea-dd4a-4782-9426-a06c757b3ac7"),
+                            CastId = new Guid("10000000-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("becaa2ea-dd4a-4782-9426-a06c757b3ac7"),
+                            CastId = new Guid("10000000-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("cda68be7-8670-451b-90fa-cac02bd5c581"),
+                            CastId = new Guid("20000000-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("cda68be7-8670-451b-90fa-cac02bd5c581"),
+                            CastId = new Guid("20000000-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("cda68be7-8670-451b-90fa-cac02bd5c581"),
+                            CastId = new Guid("20000000-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("27dc4fc2-a1b4-4cdd-be12-12b3e2b597a6"),
+                            CastId = new Guid("70000000-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("27dc4fc2-a1b4-4cdd-be12-12b3e2b597a6"),
+                            CastId = new Guid("70000000-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("27dc4fc2-a1b4-4cdd-be12-12b3e2b597a6"),
+                            CastId = new Guid("70000000-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("a9da70f0-ad05-42fa-804b-a8bf43123eca"),
+                            CastId = new Guid("80000000-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("a9da70f0-ad05-42fa-804b-a8bf43123eca"),
+                            CastId = new Guid("80000000-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("a9da70f0-ad05-42fa-804b-a8bf43123eca"),
+                            CastId = new Guid("80000000-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ce2f0b5d-9a08-45be-80aa-09f3afcfc246"),
+                            CastId = new Guid("b0000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ce2f0b5d-9a08-45be-80aa-09f3afcfc246"),
+                            CastId = new Guid("b0000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ce2f0b5d-9a08-45be-80aa-09f3afcfc246"),
+                            CastId = new Guid("b0000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("763434df-8ad8-49ec-a278-40d471b804c0"),
+                            CastId = new Guid("d0000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("763434df-8ad8-49ec-a278-40d471b804c0"),
+                            CastId = new Guid("d0000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("763434df-8ad8-49ec-a278-40d471b804c0"),
+                            CastId = new Guid("d0000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3f991753-7c36-4241-a2be-078bb8e19341"),
+                            CastId = new Guid("e0000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3f991753-7c36-4241-a2be-078bb8e19341"),
+                            CastId = new Guid("e0000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3f991753-7c36-4241-a2be-078bb8e19341"),
+                            CastId = new Guid("e0000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c4f7030e-86dd-4485-b209-ecfbc355e9ff"),
+                            CastId = new Guid("a1000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c4f7030e-86dd-4485-b209-ecfbc355e9ff"),
+                            CastId = new Guid("a1000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c4f7030e-86dd-4485-b209-ecfbc355e9ff"),
+                            CastId = new Guid("a1000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3c950763-f672-45e6-8434-eae2fdcdc833"),
+                            CastId = new Guid("a2000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3c950763-f672-45e6-8434-eae2fdcdc833"),
+                            CastId = new Guid("a2000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("3c950763-f672-45e6-8434-eae2fdcdc833"),
+                            CastId = new Guid("a2000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("16c0c251-d70a-4551-ab60-9722da0ac788"),
+                            CastId = new Guid("a2000004-0000-0000-0000-000000000004")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("16c0c251-d70a-4551-ab60-9722da0ac788"),
+                            CastId = new Guid("a2000005-0000-0000-0000-000000000005")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("16c0c251-d70a-4551-ab60-9722da0ac788"),
+                            CastId = new Guid("a2000006-0000-0000-0000-000000000006")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ed93972c-34c6-46bb-9cc2-70168c48db19"),
+                            CastId = new Guid("a2000007-0000-0000-0000-000000000007")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ed93972c-34c6-46bb-9cc2-70168c48db19"),
+                            CastId = new Guid("a2000008-0000-0000-0000-000000000008")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ed93972c-34c6-46bb-9cc2-70168c48db19"),
+                            CastId = new Guid("a2000009-0000-0000-0000-000000000009")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("dbb3e63b-30e3-42c3-8bb1-5dc3afc12d37"),
+                            CastId = new Guid("a2000010-0000-0000-0000-000000000010")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("dbb3e63b-30e3-42c3-8bb1-5dc3afc12d37"),
+                            CastId = new Guid("a2000011-0000-0000-0000-000000000011")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("dbb3e63b-30e3-42c3-8bb1-5dc3afc12d37"),
+                            CastId = new Guid("a2000012-0000-0000-0000-000000000012")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ab811cf3-fc34-4b04-b189-e7542dd8433b"),
+                            CastId = new Guid("a2000013-0000-0000-0000-000000000013")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ab811cf3-fc34-4b04-b189-e7542dd8433b"),
+                            CastId = new Guid("a2000014-0000-0000-0000-000000000014")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ab811cf3-fc34-4b04-b189-e7542dd8433b"),
+                            CastId = new Guid("a2000015-0000-0000-0000-000000000015")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("494133b2-aec5-4439-9a08-96ffaac69aa1"),
+                            CastId = new Guid("a2000019-0000-0000-0000-000000000019")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("494133b2-aec5-4439-9a08-96ffaac69aa1"),
+                            CastId = new Guid("a2000020-0000-0000-0000-000000000020")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("494133b2-aec5-4439-9a08-96ffaac69aa1"),
+                            CastId = new Guid("a2000021-0000-0000-0000-000000000021")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ae047559-87fa-4de8-809f-18189b5cbf36"),
+                            CastId = new Guid("a2000022-0000-0000-0000-000000000022")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ae047559-87fa-4de8-809f-18189b5cbf36"),
+                            CastId = new Guid("a2000023-0000-0000-0000-000000000023")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("ae047559-87fa-4de8-809f-18189b5cbf36"),
+                            CastId = new Guid("a2000024-0000-0000-0000-000000000024")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("05271d77-a0a7-4a2b-8fa9-7ac0eaa04faa"),
+                            CastId = new Guid("a2000025-0000-0000-0000-000000000025")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("05271d77-a0a7-4a2b-8fa9-7ac0eaa04faa"),
+                            CastId = new Guid("a2000026-0000-0000-0000-000000000026")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("05271d77-a0a7-4a2b-8fa9-7ac0eaa04faa"),
+                            CastId = new Guid("a2000027-0000-0000-0000-000000000027")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("19a041b9-b25f-48cf-8322-49cbdf1d6aa5"),
+                            CastId = new Guid("a2000028-0000-0000-0000-000000000028")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("19a041b9-b25f-48cf-8322-49cbdf1d6aa5"),
+                            CastId = new Guid("a2000029-0000-0000-0000-000000000029")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("19a041b9-b25f-48cf-8322-49cbdf1d6aa5"),
+                            CastId = new Guid("a2000030-0000-0000-0000-000000000030")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("fa1420cc-8f6e-45b4-a116-ba70490f1d61"),
+                            CastId = new Guid("a2000040-0000-0000-0000-000000000040")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("fa1420cc-8f6e-45b4-a116-ba70490f1d61"),
+                            CastId = new Guid("a2000041-0000-0000-0000-000000000041")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("fa1420cc-8f6e-45b4-a116-ba70490f1d61"),
+                            CastId = new Guid("a2000042-0000-0000-0000-000000000042")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c13db1bf-d596-4688-ab91-6cfe1896aed6"),
+                            CastId = new Guid("f0000001-0000-0000-0000-000000000001")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c13db1bf-d596-4688-ab91-6cfe1896aed6"),
+                            CastId = new Guid("f0000031-0000-0000-0000-000000000031")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("0045babb-f287-4102-83af-3061e2d8a7e9"),
+                            CastId = new Guid("f0000002-0000-0000-0000-000000000002")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("0045babb-f287-4102-83af-3061e2d8a7e9"),
+                            CastId = new Guid("f0000032-0000-0000-0000-000000000032")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("d6c05b4a-d111-4539-8e0d-dbf252eac1cf"),
+                            CastId = new Guid("f0000003-0000-0000-0000-000000000003")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("d6c05b4a-d111-4539-8e0d-dbf252eac1cf"),
+                            CastId = new Guid("f0000033-0000-0000-0000-000000000033")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("7120e6fc-c8df-4264-8f74-abacfe03d043"),
+                            CastId = new Guid("f0000004-0000-0000-0000-000000000004")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("7120e6fc-c8df-4264-8f74-abacfe03d043"),
+                            CastId = new Guid("f0000034-0000-0000-0000-000000000034")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c0287e4d-2644-468d-9e05-1fac031d8f29"),
+                            CastId = new Guid("f0000005-0000-0000-0000-000000000005")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c0287e4d-2644-468d-9e05-1fac031d8f29"),
+                            CastId = new Guid("f0000035-0000-0000-0000-000000000035")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("124c36a9-e53f-4590-afb9-f580f382be1a"),
+                            CastId = new Guid("f0000006-0000-0000-0000-000000000006")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("124c36a9-e53f-4590-afb9-f580f382be1a"),
+                            CastId = new Guid("f0000036-0000-0000-0000-000000000036")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("62c8cd6f-03a8-42a6-abcf-d9afb2a9c738"),
+                            CastId = new Guid("f0000007-0000-0000-0000-000000000007")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("62c8cd6f-03a8-42a6-abcf-d9afb2a9c738"),
+                            CastId = new Guid("f0000037-0000-0000-0000-000000000037")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("4e2537f9-0c81-4962-a9d8-7601d5197f8f"),
+                            CastId = new Guid("f0000008-0000-0000-0000-000000000008")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("4e2537f9-0c81-4962-a9d8-7601d5197f8f"),
+                            CastId = new Guid("f0000038-0000-0000-0000-000000000038")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("85a99dd8-2726-46c6-9da4-2e70848d354c"),
+                            CastId = new Guid("f0000009-0000-0000-0000-000000000009")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("85a99dd8-2726-46c6-9da4-2e70848d354c"),
+                            CastId = new Guid("f0000039-0000-0000-0000-000000000039")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b21abb4a-48bc-44c9-b55d-3c76af600b66"),
+                            CastId = new Guid("f0000010-0000-0000-0000-000000000010")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b21abb4a-48bc-44c9-b55d-3c76af600b66"),
+                            CastId = new Guid("f0000040-0000-0000-0000-000000000040")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("f82aa6bb-e2fe-4ad4-ab0b-1f9b86d128cf"),
+                            CastId = new Guid("f0000011-0000-0000-0000-000000000011")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("f82aa6bb-e2fe-4ad4-ab0b-1f9b86d128cf"),
+                            CastId = new Guid("f0000041-0000-0000-0000-000000000041")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("03a62472-fb29-4e86-9a0b-e7e6774e620e"),
+                            CastId = new Guid("f0000012-0000-0000-0000-000000000012")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("03a62472-fb29-4e86-9a0b-e7e6774e620e"),
+                            CastId = new Guid("f0000042-0000-0000-0000-000000000042")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("02da11fc-80a7-4a5b-b382-a18b7c2fe04c"),
+                            CastId = new Guid("f0000013-0000-0000-0000-000000000013")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("02da11fc-80a7-4a5b-b382-a18b7c2fe04c"),
+                            CastId = new Guid("f0000043-0000-0000-0000-000000000043")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b858e95b-c04c-49c3-a047-1df2a9409f94"),
+                            CastId = new Guid("f0000014-0000-0000-0000-000000000014")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("b858e95b-c04c-49c3-a047-1df2a9409f94"),
+                            CastId = new Guid("f0000044-0000-0000-0000-000000000044")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("8dcfcef4-ae7d-4605-b713-39fd0408c450"),
+                            CastId = new Guid("f0000015-0000-0000-0000-000000000015")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("8dcfcef4-ae7d-4605-b713-39fd0408c450"),
+                            CastId = new Guid("f0000045-0000-0000-0000-000000000045")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("f310fceb-fdc9-40c4-a908-5bdd5048f9e1"),
+                            CastId = new Guid("f0000016-0000-0000-0000-000000000016")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("f310fceb-fdc9-40c4-a908-5bdd5048f9e1"),
+                            CastId = new Guid("f0000046-0000-0000-0000-000000000046")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c6a931d5-cef1-47ea-9ccf-ff5dd8d8128d"),
+                            CastId = new Guid("f0000017-0000-0000-0000-000000000017")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c6a931d5-cef1-47ea-9ccf-ff5dd8d8128d"),
+                            CastId = new Guid("f0000047-0000-0000-0000-000000000047")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("15b8f953-bbdc-474c-87ea-7b31392a1438"),
+                            CastId = new Guid("f0000018-0000-0000-0000-000000000018")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("15b8f953-bbdc-474c-87ea-7b31392a1438"),
+                            CastId = new Guid("f0000048-0000-0000-0000-000000000048")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("237348c7-21c5-497a-be1a-091bdb900cc4"),
+                            CastId = new Guid("f0000019-0000-0000-0000-000000000019")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("237348c7-21c5-497a-be1a-091bdb900cc4"),
+                            CastId = new Guid("f0000049-0000-0000-0000-000000000049")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c325c852-f52c-4b49-98da-bb7962543e1c"),
+                            CastId = new Guid("f0000020-0000-0000-0000-000000000020")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("c325c852-f52c-4b49-98da-bb7962543e1c"),
+                            CastId = new Guid("f0000050-0000-0000-0000-000000000050")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("270ada65-f8c4-4b34-ac06-7a86e5e7b032"),
+                            CastId = new Guid("f0000021-0000-0000-0000-000000000021")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("270ada65-f8c4-4b34-ac06-7a86e5e7b032"),
+                            CastId = new Guid("f0000051-0000-0000-0000-000000000051")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("8b0933be-389d-4c80-aed7-00fd897a88a6"),
+                            CastId = new Guid("f0000022-0000-0000-0000-000000000022")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("8b0933be-389d-4c80-aed7-00fd897a88a6"),
+                            CastId = new Guid("f0000052-0000-0000-0000-000000000052")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("e55d8a07-b4a5-41a7-82dd-796755aa8ac8"),
+                            CastId = new Guid("f0000023-0000-0000-0000-000000000023")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("e55d8a07-b4a5-41a7-82dd-796755aa8ac8"),
+                            CastId = new Guid("f0000053-0000-0000-0000-000000000053")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("13e158d5-e481-42f1-a738-e6debd58c633"),
+                            CastId = new Guid("f0000024-0000-0000-0000-000000000024")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("13e158d5-e481-42f1-a738-e6debd58c633"),
+                            CastId = new Guid("f0000054-0000-0000-0000-000000000054")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("15e20fb5-ff05-486e-97e4-54bc41171ef7"),
+                            CastId = new Guid("f0000025-0000-0000-0000-000000000025")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("15e20fb5-ff05-486e-97e4-54bc41171ef7"),
+                            CastId = new Guid("f0000055-0000-0000-0000-000000000055")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("49386f56-ddad-4b85-8e3f-dbd6f5676389"),
+                            CastId = new Guid("f0000026-0000-0000-0000-000000000026")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("49386f56-ddad-4b85-8e3f-dbd6f5676389"),
+                            CastId = new Guid("f0000056-0000-0000-0000-000000000056")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("fd4f14ac-2d25-4be6-b4ba-53454a7b3177"),
+                            CastId = new Guid("f0000027-0000-0000-0000-000000000027")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("fd4f14ac-2d25-4be6-b4ba-53454a7b3177"),
+                            CastId = new Guid("f0000057-0000-0000-0000-000000000057")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("47683eac-f3c8-47b8-a9b2-12b92953b110"),
+                            CastId = new Guid("f0000028-0000-0000-0000-000000000028")
+                        },
+                        new
+                        {
+                            ContentId = new Guid("47683eac-f3c8-47b8-a9b2-12b92953b110"),
+                            CastId = new Guid("f0000058-0000-0000-0000-000000000058")
+                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Review", b =>

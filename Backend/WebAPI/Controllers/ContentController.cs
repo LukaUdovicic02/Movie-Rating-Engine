@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         [HttpGet("type")]
         public async Task<ActionResult<IEnumerable<ContentDto>>> GetContentByTypePaginated(
             [FromQuery] ContentType type,
-            [FromQuery] int page = 1, 
+            [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10
             )
         {
@@ -39,12 +39,36 @@ namespace WebAPI.Controllers
         [HttpGet("Search")]
         public async Task<ActionResult<IEnumerable<ContentDto>>> SearchContent(
             [FromQuery] string? title,
-            [FromQuery] DateTime? releaseDate)
+            [FromQuery] DateTime? releaseDate,
+            [FromQuery] int? minRating
+            )
         {
             try
             {
-                var content = await contentLogic.SearchContentAsync(title, releaseDate);
+                var content = await contentLogic.SearchContentAsync(title, releaseDate, minRating);
                 return Ok(content);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpGet("{contentId:Guid}")]
+        public async Task<ActionResult<ContentDto>> GetContentByIdAsync([FromRoute] Guid contentId)
+        {
+
+            try
+            {
+
+                var content = await contentLogic.GetContentByIdAsync(contentId);
+                if (content == null)
+                {
+                    return NotFound();
+                }
+                return Ok(content);
+
             }
             catch (Exception ex)
             {

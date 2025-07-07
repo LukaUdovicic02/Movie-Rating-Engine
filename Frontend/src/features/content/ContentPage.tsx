@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { ContentDto, ContentType } from "../../types/content";
+import type { ContentDetailDto, ContentDto, ContentType } from "../../types/content";
 import { getContentByTypePaginated, searchContent } from "../../api/contentApi";
 import ContentCard from "../../components/ContentCard";
 import Search from "../../components/Search";
@@ -7,11 +7,12 @@ import ToggleSwitch from "../../components/ToggleSwitch";
 import Pagination from "../../components/Pagination";
 
 const ContentPage = () => {
-  const [content, setContent] = useState<ContentDto[]>([]);
+  const [content, setContent] = useState<ContentDetailDto[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const [pageSize] = useState<number>(10);
   const [type, setType] = useState<ContentType>("Movie");
+
   const [searchTitle, setSearchTitle] = useState<string | undefined>();
   const [searchDate, setSearchDate] = useState<string | undefined>();
 
